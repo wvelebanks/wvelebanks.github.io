@@ -98,6 +98,12 @@ footer {
     padding: 15px 20px;
   }
 
+.image-mosaic a {
+  text-decoration: none;
+  color: inherit;
+  display: block; /* Ensures the link covers the whole figure */
+}
+  
   main {
     padding: 20px;
   }
