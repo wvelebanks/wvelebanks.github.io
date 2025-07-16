@@ -1,83 +1,104 @@
-/* Layout: Sidebar on the left, main content on the right */
-body {
-    display: flex;
-    min-height: 100vh;
-    margin: 0;
-    font-family: 'Roboto', sans-serif;
+/* Base reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
-/* Sidebar styles */
+body {
+  display: flex;
+  min-height: 100vh;
+  font-family: 'Roboto', sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+/* Sidebar navigation */
 nav {
-    width: 220px;
-    background-color: #333;
-    color: white;
-    padding: 20px;
-    flex-shrink: 0;
-    height: 100vh;
-    position: sticky;
-    top: 0;
+  width: 220px;
+  background-color: #333;
+  color: white;
+  padding: 20px;
+  flex-shrink: 0;
+  height: 100vh;
+  position: sticky;
+  top: 0;
+}
+
+nav h2 {
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+  font-size: 1.5rem;
 }
 
 nav ul {
-    list-style: none;
-    padding: 0;
+  list-style: none;
 }
 
 nav ul li {
-    margin: 15px 0;
+  margin: 15px 0;
 }
 
 nav ul li a {
-    color: white;
-    text-decoration: none;
-    display: block;
-    padding: 8px 12px;
-    border-radius: 4px;
-    transition: background-color 0.3s ease;
+  color: white;
+  text-decoration: none;
+  display: block;
+  padding: 10px 12px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
 }
 
 nav ul li a:hover {
-    background-color: #4CAF50;
+  background-color: #4caf50;
 }
 
 /* Main content area */
 main {
-    flex-grow: 1;
-    padding: 40px;
-    background-color: #f4f4f4;
+  flex-grow: 1;
+  padding: 40px 60px;
+  overflow-y: auto;
 }
 
+/* Sections spacing */
 section {
-    margin-bottom: 60px;
+  margin-bottom: 60px;
 }
 
 section h2 {
-    font-size: 2rem;
-    margin-bottom: 10px;
+  font-size: 2rem;
+  margin-bottom: 15px;
 }
 
-/* Header inside main (if used) */
-header {
-    background: none;
-    color: #222;
-    padding: 0;
+/* Header styles */
+header h1 {
+  margin-bottom: 40px;
+  font-weight: 700;
 }
 
+/* Footer styles */
 footer {
-    text-align: center;
-    padding: 20px;
-    background-color: #222;
-    color: white;
+  margin-top: 60px;
+  text-align: center;
+  padding: 20px 0;
+  color: #777;
+  border-top: 1px solid #ddd;
 }
 
-/* Responsive sidebar collapse */
+/* Responsive design */
 @media (max-width: 768px) {
-    body {
-        flex-direction: column;
-    }
+  body {
+    flex-direction: column;
+  }
 
-    nav {
-        width: 100%;
-        height: auto;
-    }
+  nav {
+    width: 100%;
+    height: auto;
+    position: relative;
+    padding: 15px 20px;
+  }
+
+  main {
+    padding: 20px;
+  }
 }
