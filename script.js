@@ -1,37 +1,40 @@
-// Wait for the DOM to be fully loaded before running the script
-document.addEventListener('DOMContentLoaded', function() {
-    // Log a welcome message to the console when the page loads
-    console.log("Welcome to Your Website! Page Loaded Successfully.");
+// DOM Ready
+document.addEventListener('DOMContentLoaded', function () {
+    console.log("Page loaded.");
 
-    // Add event listeners to navigation links to smooth scroll to sections
-    const navLinks = document.querySelectorAll('nav ul li a');
-    
-    navLinks.forEach(function(link) {
-        link.addEventListener('click', function(event) {
-            // Prevent default link behavior (jumping directly)
-            event.preventDefault();
-
-            // Get the target section ID from the href attribute
-            const targetId = this.getAttribute('href').substring(1); // Remove the "#" symbol
-            const targetSection = document.getElementById(targetId);
-
-            // Smooth scroll to the target section
-            if (targetSection) {
-                targetSection.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
+    // Smooth scroll for nav links
+    document.querySelectorAll('a.nav-link').forEach(link => {
+        link.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
             }
         });
     });
 
-    // Example of an interactive welcome message when clicking a button
+    // Intersection Observer for animations
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.animate-on-scroll').forEach(section => {
+        observer.observe(section);
+    });
+
+    // Optional welcome button
     const welcomeButton = document.createElement('button');
     welcomeButton.textContent = 'Click Me for a Welcome Message!';
+    welcomeButton.style.display = 'block';
+    welcomeButton.style.margin = '30px auto';
     document.body.appendChild(welcomeButton);
 
-    // Show an alert when the button is clicked
-    welcomeButton.addEventListener('click', function() {
-        alert('Welcome to your interactive website!');
+    welcomeButton.addEventListener('click', function () {
+        alert('Welcome to your dynamic website! 🎉');
     });
 });
