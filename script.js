@@ -29,7 +29,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Optional welcome button
     const welcomeButton = document.createElement('button');
-    welcomeButton.textContent = 'Click Me for a Welcome Message!';
+   // welcomeButton.textContent = 'Click Me for a Welcome Message!';
+    document.querySelector('main').appendChild(welcomeButton);
     welcomeButton.style.display = 'block';
     welcomeButton.style.margin = '30px auto';
     document.body.appendChild(welcomeButton);
