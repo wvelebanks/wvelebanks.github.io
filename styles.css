@@ -1,62 +1,54 @@
-/* Reset some basic elements for consistency across browsers */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* Set the default font for the whole page */
+/* Layout: Sidebar on the left, main content on the right */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
-    line-height: 1.6;
+    display: flex;
+    min-height: 100vh;
     margin: 0;
-    padding: 0;
+    font-family: 'Roboto', sans-serif;
 }
 
-/* Header style */
-header {
-    background-color: #4CAF50;
+/* Sidebar styles */
+nav {
+    width: 220px;
+    background-color: #333;
     color: white;
     padding: 20px;
-    text-align: center;
-}
-
-header h1 {
-    font-size: 2.5rem;
-}
-
-/* Navigation styles */
-nav {
-    background-color: #333;
+    flex-shrink: 0;
+    height: 100vh;
+    position: sticky;
+    top: 0;
 }
 
 nav ul {
-    list-style-type: none;
+    list-style: none;
     padding: 0;
 }
 
 nav ul li {
-    display: inline;
-    margin-right: 15px;
+    margin: 15px 0;
 }
 
 nav ul li a {
     color: white;
     text-decoration: none;
-    font-size: 1.1rem;
+    display: block;
+    padding: 8px 12px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
 }
 
 nav ul li a:hover {
-    color: #4CAF50;
+    background-color: #4CAF50;
 }
 
-/* Section styling */
+/* Main content area */
+main {
+    flex-grow: 1;
+    padding: 40px;
+    background-color: #f4f4f4;
+}
+
 section {
-    padding: 20px;
-    margin: 20px auto;
-    max-width: 1200px;
+    margin-bottom: 60px;
 }
 
 section h2 {
@@ -64,24 +56,28 @@ section h2 {
     margin-bottom: 10px;
 }
 
-section p {
-    font-size: 1rem;
-    color: #555;
+/* Header inside main (if used) */
+header {
+    background: none;
+    color: #222;
+    padding: 0;
 }
 
-/* Footer styles */
 footer {
-    background-color: #333;
-    color: white;
     text-align: center;
-    padding: 10px;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
+    padding: 20px;
+    background-color: #222;
+    color: white;
 }
 
-/* Responsive design */
+/* Responsive sidebar collapse */
 @media (max-width: 768px) {
-    nav ul li {
-        display: block;
-        margin: 1
+    body {
+        flex-direction: column;
+    }
+
+    nav {
+        width: 100%;
+        height: auto;
+    }
+}
