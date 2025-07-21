@@ -111,36 +111,67 @@ footer {
 
 /* added for the project section specifically*/
 
-.project-row {
+.project-block {
   display: flex;
   align-items: flex-start;
-  justify-content: flex-start;
-  margin: 30px auto;
+  justify-content: center;
+  margin: 40px auto;
   max-width: 1000px;
-  text-align: left;
+  flex-wrap: wrap;
 }
 
-.project-img {
+.project-block figure {
   max-width: 30%;
+  margin: 0 20px;
+  text-align: center;
+}
+
+.project-block img {
+  width: 100%;
   height: auto;
-  margin-right: 20px;
-  border-radius: 6px;
+  border-radius: 8px;
 }
 
-.project-text {
-  flex: 1;
-  max-width: 65%;
+.project-block figcaption {
+  margin-top: 10px;
+  font-weight: bold;
 }
 
-.project-text h3 {
-  margin-top: 0;
+.project-summary {
+  max-width: 60%;
+  font-size: 16px;
+  line-height: 1.5;
+  text-align: left;
+  padding: 10px;
 }
 
-.project-text a {
-  text-decoration: none;
+.project-summary a {
+  display: inline-block;
+  margin-top: 8px;
   color: #0077cc;
+  text-decoration: none;
 }
 
-.project-text a:hover {
+.project-summary a:hover {
   text-decoration: underline;
+}
+
+/* Alternating Layout */
+.left-align {
+  flex-direction: row;
+}
+
+.right-align {
+  flex-direction: row-reverse;
+}
+
+.center-align {
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.center-align .project-summary {
+  max-width: 80%;
+  text-align: center;
 }
