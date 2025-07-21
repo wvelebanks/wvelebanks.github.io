@@ -111,26 +111,36 @@ footer {
 
 /* added for the project section specifically*/
 
-#projects .project {
+.project-row {
   display: flex;
   align-items: flex-start;
-  margin: 40px auto;
+  justify-content: flex-start;
+  margin: 30px auto;
   max-width: 1000px;
   text-align: left;
 }
 
-#projects img {
-  max-width: 250px;
+.project-img {
+  max-width: 30%;
   height: auto;
   margin-right: 20px;
-  border-radius: 10px;
+  border-radius: 6px;
 }
 
-#projects .description {
-  max-width: 700px;
+.project-text {
+  flex: 1;
+  max-width: 65%;
 }
 
-#projects .description h3 {
+.project-text h3 {
   margin-top: 0;
 }
 
+.project-text a {
+  text-decoration: none;
+  color: #0077cc;
+}
+
+.project-text a:hover {
+  text-decoration: underline;
+}
