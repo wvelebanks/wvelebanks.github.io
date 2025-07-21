@@ -111,67 +111,60 @@ footer {
 
 /* added for the project section specifically*/
 
-.project-block {
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  margin: 40px auto;
+#projects {
   max-width: 1000px;
-  flex-wrap: wrap;
+  margin: auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
 }
 
-.project-block figure {
-  max-width: 30%;
-  margin: 0 20px;
+.project-entry {
+  display: flex;
+  align-items: flex-start;
+  margin: 40px 0;
+}
+
+.project-entry figure {
+  width: 30%;
+  margin: 0;
   text-align: center;
 }
 
-.project-block img {
+.project-entry img {
   width: 100%;
   height: auto;
-  border-radius: 8px;
+  border-radius: 6px;
 }
 
-.project-block figcaption {
-  margin-top: 10px;
-  font-weight: bold;
-}
-
-.project-summary {
-  max-width: 60%;
-  font-size: 16px;
-  line-height: 1.5;
-  text-align: left;
-  padding: 10px;
-}
-
-.project-summary a {
-  display: inline-block;
+.project-entry figcaption {
   margin-top: 8px;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.project-text {
+  width: 65%;
+  padding: 0 20px;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.project-text a {
   color: #0077cc;
   text-decoration: none;
 }
 
-.project-summary a:hover {
+.project-text a:hover {
   text-decoration: underline;
 }
 
-/* Alternating Layout */
-.left-align {
-  flex-direction: row;
-}
-
-.right-align {
+/* Layout flipping */
+.project-entry.right {
   flex-direction: row-reverse;
+  text-align: right;
 }
 
-.center-align {
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
-
-.center-align .project-summary {
-  max-width: 80%;
-  text-align: center;
+.project-entry.right .project-text {
+  padding: 0 20px 0 0;
+  text-align: left;
 }
