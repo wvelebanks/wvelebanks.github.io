@@ -108,3 +108,29 @@ footer {
     padding: 20px;
   }
 }
+
+/* added for the project section specifically*/
+
+#projects .project {
+  display: flex;
+  align-items: flex-start;
+  margin: 40px auto;
+  max-width: 1000px;
+  text-align: left;
+}
+
+#projects img {
+  max-width: 250px;
+  height: auto;
+  margin-right: 20px;
+  border-radius: 10px;
+}
+
+#projects .description {
+  max-width: 700px;
+}
+
+#projects .description h3 {
+  margin-top: 0;
+}
+
