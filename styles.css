@@ -168,3 +168,34 @@ footer {
   padding: 0 20px 0 0;
   text-align: left;
 }
+
+/* ============================================== */
+/* additional */
+
+@media screen and (max-width: 768px) {
+  .project-entry {
+    flex-direction: column !important;
+    align-items: center;
+    text-align: center;
+  }
+
+  .project-text {
+    width: 100%;
+    padding: 20px 0;
+    text-align: center;
+  }
+
+  .project-entry.right .project-text {
+    padding: 20px 0;
+  }
+
+  .project-entry figure {
+    width: 90%;
+  }
+
+  .project-entry img {
+    width: 100%;
+  }
+}
+
+
