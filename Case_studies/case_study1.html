@@ -95,6 +95,41 @@
     submitForm("form3", apiURL, "section3");
 </script>
 
+
+
+
+<!--    <script>
+        const apiURL = "https://YOUR_API_GATEWAY_URL"; // same endpoint for POST
+        const readURL = "https://YOUR_API_GATEWAY_READ_URL"; // GET endpoint
+
+        // --- READ (prefill the form) ---
+        async function loadData() {
+            const response = await fetch(readURL + "?userId=12345");
+            const data = await response.json();
+
+            document.getElementById("name").value = data.name;
+            document.getElementById("email").value = data.email;
+        }
+
+        // --- WRITE (submit updated form) ---
+        document.getElementById("form1").addEventListener("submit", async function(e) {
+            e.preventDefault();
+            const formData = Object.fromEntries(new FormData(this).entries());
+            await fetch(apiURL, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(formData)
+            });
+            alert("Saved!");
+        });
+
+        // Load data on page load
+        window.onload = loadData;
+    </script>  -->
+
+
+
+    
 </body>
 </html>
 
