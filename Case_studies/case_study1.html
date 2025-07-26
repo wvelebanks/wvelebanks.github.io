@@ -1,31 +1,68 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Submit Data</title>
+    <title>Multi-Panel Form</title>
+    <style>
+        .panel {
+            border: 1px solid #ccc;
+            padding: 15px;
+            margin: 10px;
+        }
+    </style>
 </head>
 <body>
-    <h1>Submit Data to DynamoDB</h1>
-    <form id="dataForm">
-        <label>Name:</label><input type="text" name="name" required><br>
-        <label>Email:</label><input type="email" name="email" required><br>
-        <button type="submit">Submit</button>
+
+<h1>Multi-Panel Form Example</h1>
+
+<!-- Panel 1 -->
+<div class="panel">
+    <h2>Section 1: Personal Info</h2>
+    <form id="form1">
+        <label>Name:</label>
+        <input type="text" name="name" required><br>
+
+        <label>Email:</label>
+        <input type="email" name="email" required><br>
+
+        <button type="submit">Submit Section 1</button>
     </form>
+</div>
 
-    <script>
-        document.getElementById("dataForm").addEventListener("submit", async function(e) {
+<!-- Panel 2 -->
+<div class="panel">
+    <h2>Section 2: Address Info</h2>
+    <form id="form2">
+        <label>Street:</label>
+        <input type="text" name="street" required><br>
+
+        <label>City:</label>
+        <input type="text" name="city" required><br>
+
+        <button type="submit">Submit Section 2</button>
+    </form>
+</div>
+
+<script>
+    // Function to submit form data via API Gateway
+    async function submitForm(formId, apiUrl) {
+        const form = document.getElementById(formId);
+        form.addEventListener("submit", async (e) => {
             e.preventDefault();
-            const formData = new FormData(this);
-            const data = Object.fromEntries(formData.entries());
-
-            const response = await fetch("YOUR_API_GATEWAY_ENDPOINT", {
+            const data = Object.fromEntries(new FormData(form).entries());
+            const res = await fetch(apiUrl, {
                 method: "POST",
-                headers: {"Content-Type": "application/json"},
+                headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(data)
             });
-
-            alert(await response.text());
+            alert(await res.text());
         });
-    </script>
+    }
+
+    // Each panel can have its own API endpoint
+    submitForm("form1", "https://YOUR_API_GATEWAY_URL_FOR_SECTION1");
+    submitForm("form2", "https://YOUR_API_GATEWAY_URL_FOR_SECTION2");
+</script>
+
 </body>
 </html>
 
