@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Multi-Panel Form</title>
+    <title>Multi-Panel Form (3 Sections)</title>
     <style>
         .panel {
             border: 1px solid #ccc;
@@ -42,25 +42,45 @@
     </form>
 </div>
 
+<!-- Panel 3 -->
+<div class="panel">
+    <h2>Section 3: Additional Info</h2>
+    <form id="form3">
+        <label>Comments:</label>
+        <textarea name="comments" required></textarea><br>
+
+        <label>Subscribe:</label>
+        <input type="checkbox" name="subscribe" value="yes"><br>
+
+        <button type="submit">Submit Section 3</button>
+    </form>
+</div>
+
 <script>
-    // Function to submit form data via API Gateway
-    async function submitForm(formId, apiUrl) {
+    async function submitForm(formId, apiUrl, sectionName) {
         const form = document.getElementById(formId);
         form.addEventListener("submit", async (e) => {
             e.preventDefault();
-            const data = Object.fromEntries(new FormData(form).entries());
+
+            let data = Object.fromEntries(new FormData(form).entries());
+            data.section = sectionName; // Add which section is submitting
+
             const res = await fetch(apiUrl, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(data)
             });
+
             alert(await res.text());
         });
     }
 
-    // Each panel can have its own API endpoint
-    submitForm("form1", "https://YOUR_API_GATEWAY_URL_FOR_SECTION1");
-    submitForm("form2", "https://YOUR_API_GATEWAY_URL_FOR_SECTION2");
+    // You can set different API URLs or the same URL
+    const apiURL = "https://YOUR_API_GATEWAY_URL"; // Replace
+
+    submitForm("form1", apiURL, "section1");
+    submitForm("form2", apiURL, "section2");
+    submitForm("form3", apiURL, "section3");
 </script>
 
 </body>
