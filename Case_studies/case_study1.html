@@ -1,4 +1,59 @@
 <!DOCTYPE html>
+<html>
+<head>
+    <title>Submit Data</title>
+</head>
+<body>
+    <h1>Submit Data to DynamoDB</h1>
+    <form id="dataForm">
+        <label>Name:</label><input type="text" name="name" required><br>
+        <label>Email:</label><input type="email" name="email" required><br>
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+        document.getElementById("dataForm").addEventListener("submit", async function(e) {
+            e.preventDefault();
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData.entries());
+
+            const response = await fetch("YOUR_API_GATEWAY_ENDPOINT", {
+                method: "POST",
+                headers: {"Content-Type": "application/json"},
+                body: JSON.stringify(data)
+            });
+
+            alert(await response.text());
+        });
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+==========================================================================================================
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -9,11 +64,11 @@
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
   <![endif]-->
-</head>
-<body>
+<!-- </head> 
+<body> -->
   
   <!-- Your content goes here -->
 
-  <script src="index.js"></script>
+ <!--  <script src="index.js"></script>
 </body>
-</html>
+</html>  -->
