@@ -18,22 +18,40 @@
 <div class="panel">
     <h2>Section 1: BaC</h2>
     <form id="form1">
-        <label>Name:</label>
+        <label>TimeStamp:</label>
         <input type="text" name="name" required><br>
         
-        <label>Email:</label>
-        <input type="email" name="email" required><br>
+        <label>Site:</label>
+        <input type="text" name="email" required><br>
 
-         <label>Name:</label>
+        <label>Bacteria Sample Time:</label>
         <input type="text" name="name" required><br>
 
-       <label>Name:</label>
+        <label>Bacteria Sample Collected:</label>
         <input type="text" name="name" required><br>
 
-        <label>Name:</label>
+        <label>Setup Time:</label>
         <input type="text" name="name" required><br>
 
-        <label>Name:</label>
+        <label>Incubator In time:</label>
+        <input type="text" name="name" required><br>
+
+        <label>incubator Temp C:</label>
+        <input type="text" name="name" required><br>
+        
+        <label>Colliert Agent:</label>
+        <input type="text" name="email" required><br>
+
+        <label>Duplicate:</label>
+        <input type="text" name="name" required><br>
+
+        <label>Dup. Bacteria Sample Time:</label>
+        <input type="text" name="name" required><br>
+
+        <label>Dup. Bacteria Sample Collected:</label>
+        <input type="text" name="name" required><br>
+
+        <label>Technician:</label>
         <input type="text" name="name" required><br>
         
         <button type="submit">Submit Section 1</button>
@@ -44,12 +62,30 @@
 <div class="panel">
     <h2>Section 2: TBdity</h2>
     <form id="form2">
-        <label>Street:</label>
+        <label>Turbidity Sample Time:</label>
         <input type="text" name="street" required><br>
 
-        <label>City:</label>
+        <label>Turbidity Sample Collected:</label>
         <input type="text" name="city" required><br>
+        
+        <label>Meassuremet Time:</label>
+        <input type="text" name="street" required><br>
 
+        <label>Turbidity NTU:</label>
+        <input type="text" name="city" required><br>
+        
+        <label>Duplicate:</label>
+        <input type="text" name="street" required><br>
+
+        <label>Dup. Turbidity Sample Time:</label>
+        <input type="text" name="city" required><br>
+        
+        <label>Dup. Turbidity Sample Collected:</label>
+        <input type="text" name="city" required><br>
+         
+        <label>Dup. Turbidity NTU:</label>
+        <input type="text" name="city" required><br>
+        
         <button type="submit">Submit Section 2</button>
     </form>
 </div>
@@ -58,11 +94,20 @@
 <div class="panel">
     <h2>Section 3: CALI</h2>
     <form id="form3">
-        <label>Comments:</label>
-        <textarea name="comments" required></textarea><br>
+         <label>Date Received:</label>
+        <input type="text" name="city" required><br>
 
-        <label>Subscribe:</label>
-        <input type="checkbox" name="subscribe" value="yes"><br>
+         <label>Expiration Date:</label>
+        <input type="text" name="city" required><br>
+
+         <label>Lot No:</label>
+        <input type="text" name="city" required><br>
+
+         <label>Part No:</label>
+        <input type="text" name="city" required><br>
+
+         <label>Catalog No:</label>
+        <input type="text" name="city" required><br>
 
         <button type="submit">Submit Section 3</button>
     </form>
@@ -98,7 +143,14 @@
 
 
 
-<!--    <script>
+<!--    
+    <label>Comments:</label>
+        <textarea name="comments" required></textarea><br>
+        <label>Subscribe:</label>
+        <input type="checkbox" name="subscribe" value="yes"><br>
+    
+    
+    <script>
         const apiURL = "https://YOUR_API_GATEWAY_URL"; // same endpoint for POST
         const readURL = "https://YOUR_API_GATEWAY_READ_URL"; // GET endpoint
 
