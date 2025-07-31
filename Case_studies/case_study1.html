@@ -19,7 +19,9 @@
     <h2>Section 1: BaC</h2>
     <form id="form1">
         <label>TimeStamp:</label>
-        <input type="text" name="name" required><br>
+        <!--<input type="text" name="name" required><br>
+        <label for="appt-time">Choose a time:</label> -->
+        <input type="time" id="appt-time" name="appt-time" min="08:00" max="18:00" step="900">
         
         <label>Site:</label>
         <select id="data-options" name="data-options">
