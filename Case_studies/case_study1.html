@@ -1,4 +1,136 @@
+
+
+
+
+
+
+
+
+
+
+
 <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Tabbed Forms</title>
+  <style>
+    /* Basic tab styles */
+    .tab-container {
+      margin: 20px;
+    }
+
+    .tabs {
+      display: flex;
+      cursor: pointer;
+      margin-bottom: 10px;
+    }
+
+    .tab {
+      padding: 10px 20px;
+      background-color: #eee;
+      border: 1px solid #ccc;
+      border-bottom: none;
+    }
+
+    .tab.active {
+      background-color: #fff;
+      font-weight: bold;
+    }
+
+    .tab-content {
+      border: 1px solid #ccc;
+      padding: 20px;
+      display: none;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+<div class="tab-container">
+  <!-- Tabs -->
+  <div class="tabs">
+    <div class="tab active" data-tab="form1">Form 1</div>
+    <div class="tab" data-tab="form2">Form 2</div>
+    <div class="tab" data-tab="form3">Form 3</div>
+  </div>
+
+  <!-- Tab Contents -->
+  <div id="form1" class="tab-content active">
+    <form>
+      <label for="name1">Name:</label>
+      <input type="text" id="name1" name="name1"><br>
+      <input type="submit" value="Submit Form 1">
+    </form>
+  </div>
+
+  <div id="form2" class="tab-content">
+    <form>
+      <label for="email2">Email:</label>
+      <input type="email" id="email2" name="email2"><br>
+      <input type="submit" value="Submit Form 2">
+    </form>
+  </div>
+
+  <div id="form3" class="tab-content">
+    <form>
+      <label for="phone3">Phone:</label>
+      <input type="tel" id="phone3" name="phone3"><br>
+      <input type="submit" value="Submit Form 3">
+    </form>
+  </div>
+</div>
+
+<!-- JavaScript to handle tab switching -->
+<script>
+  const tabs = document.querySelectorAll('.tab');
+  const contents = document.querySelectorAll('.tab-content');
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      // Deactivate all tabs and contents
+      tabs.forEach(t => t.classList.remove('active'));
+      contents.forEach(c => c.classList.remove('active'));
+
+      // Activate current tab and corresponding content
+      tab.classList.add('active');
+      document.getElementById(tab.getAttribute('data-tab')).classList.add('active');
+    });
+  });
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+=========================================================
+<!-- <!DOCTYPE html>
 <html>
 <head>
     <title>Lab Form</title>
@@ -15,7 +147,7 @@
 <h1>Multi-Panel Form Example</h1>
 
 <!-- Panel 1 -->
-<div class="panel">
+<!-- <div class="panel">
     <h2>Section 1: BaC</h2>
     <form id="form1">
         <label>TimeStamp:</label>
@@ -67,7 +199,7 @@
 </div>
 
 <!-- Panel 2 -->
-<div class="panel">
+<!-- <div class="panel">
     <h2>Section 2: TBdity</h2>
     <form id="form2">
         <label>Turbidity Sample Time:</label>
@@ -103,7 +235,7 @@
 </div>
 
 <!-- Panel 3 -->
-<div class="panel">
+<!--<div class="panel">
     <h2>Section 3: CALI</h2>
     <form id="form3">
          <label>Date Received:</label>
@@ -194,8 +326,8 @@
 
 
     
-</body>
-</html>
+<!-- </body>
+</html>  -->
 
 
 
