@@ -262,261 +262,16 @@
     });
   });
 </script>
-
+<a href="https://github.com/wvelebanks/wvelebanks.github.io/blob/028a8a968d03117992ecaf549f7dc3d2ab2623f5/index.html">Back Home page.</a>
 </body>
 </html>
 
-=========================================================================================================
 
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-=========================================================
-<!-- <!DOCTYPE html>
-<html>
-<head>
-    <title>Lab Form</title>
-    <style>
-        .panel {
-            border: 1px solid #ccc;
-            padding: 15px;
-            margin: 10px;
-        }
-    </style>
-</head>
-<body>
-
-<h1>Multi-Panel Form Example</h1>
-
-<!-- Panel 1 -->
-<!-- <div class="panel">
-    <h2>Section 1: BaC</h2>
-    <form id="form1">
-        <label>TimeStamp:</label>
-        <input type="text" name="name" required><br>
-                
-        <label>Site:</label>
-        <select id="data-options" name="data-options">
-            <option value="option1">site 1</option>
-            <option value="option2">site 2</option>
-            <option value="option3">site 3</option>
-            <option value="option4">site 4</option>
-        </select><br>
-
-        <label>Bacteria Sample Time:</label>
-        <input type="time" id="appt-time" name="appt-time" min="08:00" max="18:00" step="900"><br>
-
-        <label>Bacteria Sample Collected:</label>
-        <input type="text" name="name" required><br>
-
-        <label>Setup Time:</label>
-        <input type="time" id="appt-time" name="appt-time" min="08:00" max="18:00" step="900"><br>
-
-        <label>Incubator In time:</label>
-        <input type="time" id="appt-time" name="appt-time" min="08:00" max="18:00" step="900"><br>
-
-        <label>incubator Temp C:</label>
-        <input type="text" name="name" required><br>
-        
-        <label>Colliert Agent:</label>
-        <input type="text" name="email" required><br>
-
-        <label>Duplicate:</label>
-        <label for="duplicateYes">
-        <input type="radio" id="duplicateYes" name="duplicate" value="Yes">Yes</label><
-        <label for="duplicateNo">
-        <input type="radio" id="duplicateNo" name="duplicate" value="No">No</label><br>
-        
-        <label>Dup. Bacteria Sample Time:</label>
-        <input type="time" id="appt-time" name="appt-time" min="08:00" max="18:00" step="900"><br>
-
-        <label>Dup. Bacteria Sample Collected:</label>
-        <input type="text" name="name" required><br>
-
-        <label>Technician:</label>
-        <input type="text" name="name" required><br>
-        
-        <button type="submit">Submit Section 1</button>
-    </form>
-</div>
-
-<!-- Panel 2 -->
-<!-- <div class="panel">
-    <h2>Section 2: TBdity</h2>
-    <form id="form2">
-        <label>Turbidity Sample Time:</label>
-        <input type="time" id="appt-time" name="appt-time" min="08:00" max="18:00" step="900"><br>
-
-        <label>Turbidity Sample Collected:</label>
-        <input type="text" name="city" required><br>
-        
-        <label>Meassuremet Time:</label>
-        <input type="time" id="appt-time" name="appt-time" min="08:00" max="18:00" step="900"><br>
-
-        <label>Turbidity NTU:</label>
-        <input type="text" name="city" required><br>
-        
-        <label>Duplicate:</label>
-        <label for="duplicateYes">
-        <input type="radio" id="duplicateYes" name="duplicate" value="Yes">Yes</label>
-        <label for="duplicateNo">
-        <input type="radio" id="duplicateNo" name="duplicate" value="No">No</label><br>
-
-
-        <label>Dup. Turbidity Sample Time:</label>
-        <input type="time" id="appt-time" name="appt-time" min="08:00" max="18:00" step="900"><br>
-        
-        <label>Dup. Turbidity Sample Collected:</label>
-        <input type="text" name="city" required><br>
-         
-        <label>Dup. Turbidity NTU:</label>
-        <input type="text" name="city" required><br>
-        
-        <button type="submit">Submit Section 2</button>
-    </form>
-</div>
-
-<!-- Panel 3 -->
-<!--<div class="panel">
-    <h2>Section 3: CALI</h2>
-    <form id="form3">
-         <label>Date Received:</label>
-         <input type="date" id="birthday" name="birthday"><br>
-
-         <label>Expiration Date:</label>
-        <input type="date" id="birthday" name="birthday"><br>
-
-         <label>Lot No:</label>
-        <input type="text" name="city" required><br>
-
-         <label>Part No:</label>
-        <input type="text" name="city" required><br>
-
-         <label>Catalog No:</label>
-        <input type="text" name="city" required><br>
-
-        <button type="submit">Submit Section 3</button>
-    </form>
-</div>
-
-<script>
-    async function submitForm(formId, apiUrl, sectionName) {
-        const form = document.getElementById(formId);
-        form.addEventListener("submit", async (e) => {
-            e.preventDefault();
-
-            let data = Object.fromEntries(new FormData(form).entries());
-            data.section = sectionName; // Add which section is submitting
-
-            const res = await fetch(apiUrl, {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(data)
-            });
-
-            alert(await res.text());
-        });
-    }
-
-    // You can set different API URLs or the same URL
-    const apiURL = "https://YOUR_API_GATEWAY_URL"; // Replace
-
-    submitForm("form1", apiURL, "section1");
-    submitForm("form2", apiURL, "section2");
-    submitForm("form3", apiURL, "section3");
-</script>
-
-
-
-
-<!--    
-    <label>Comments:</label>
-        <textarea name="comments" required></textarea><br>
-        <label>Subscribe:</label>
-        <input type="checkbox" name="subscribe" value="yes"><br>
-    
-    
-    <script>
-        const apiURL = "https://YOUR_API_GATEWAY_URL"; // same endpoint for POST
-        const readURL = "https://YOUR_API_GATEWAY_READ_URL"; // GET endpoint
-
-        // --- READ (prefill the form) ---
-        async function loadData() {
-            const response = await fetch(readURL + "?userId=12345");
-            const data = await response.json();
-
-            document.getElementById("name").value = data.name;
-            document.getElementById("email").value = data.email;
-        }
-
-        // --- WRITE (submit updated form) ---
-        document.getElementById("form1").addEventListener("submit", async function(e) {
-            e.preventDefault();
-            const formData = Object.fromEntries(new FormData(this).entries());
-            await fetch(apiURL, {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(formData)
-            });
-            alert("Saved!");
-        });
-
-        // Load data on page load
-        window.onload = loadData;
-    </script>  -->
-
-
-
-    
-<!-- </body>
-</html>  -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-==========================================================================================================
 <!-- <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -536,3 +291,23 @@
  <!--  <script src="index.js"></script>
 </body>
 </html>  -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
