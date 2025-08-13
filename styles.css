@@ -1,3 +1,7 @@
+/* ========================================= */
+/*  UNIVERSAL BASE STYLES (applies to all)   */
+/* ========================================= */
+
 /* Base reset */
 * {
   margin: 0;
@@ -6,12 +10,27 @@
   scroll-behavior: smooth;
 }
 
+html {
+  font-size: 16px;
+}
+
 body {
   display: flex;
   min-height: 100vh;
   font-family: 'Roboto', sans-serif;
   background-color: #f4f4f4;
   color: #333;
+  line-height: 1.6;
+}
+
+/* Links */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  opacity: 0.85;
 }
 
 /* Sidebar navigation */
@@ -42,10 +61,9 @@ nav ul li {
 
 nav ul li a {
   color: white;
-  text-decoration: none;
-  display: block;
   padding: 10px 12px;
   border-radius: 5px;
+  display: block;
   transition: background-color 0.3s ease;
 }
 
@@ -60,7 +78,7 @@ main {
   overflow-y: auto;
 }
 
-/* Sections spacing */
+/* Sections */
 section {
   margin-bottom: 60px;
 }
@@ -70,13 +88,12 @@ section h2 {
   margin-bottom: 15px;
 }
 
-/* Header styles */
 header h1 {
   margin-bottom: 40px;
   font-weight: 700;
 }
 
-/* Footer styles */
+/* Footer */
 footer {
   margin-top: 60px;
   text-align: center;
@@ -85,37 +102,14 @@ footer {
   border-top: 1px solid #ddd;
 }
 
-/* Responsive design */
-@media (max-width: 768px) {
-  body {
-    flex-direction: column;
-  }
-
-  nav {
-    width: 100%;
-    height: auto;
-    position: relative;
-    padding: 15px 20px;
-  }
-
-.image-mosaic a {
-  text-decoration: none;
-  color: inherit;
-  display: block; /* Ensures the link covers the whole figure */
-}
-  
-  main {
-    padding: 20px;
-  }
-}
-
-/* added for the project section specifically*/
+/* ========================================= */
+/*   PROJECT-SPECIFIC STYLES (index.html)    */
+/* ========================================= */
 
 #projects {
   max-width: 1000px;
   margin: auto;
   padding: 20px;
-  font-family: Arial, sans-serif;
 }
 
 .project-entry {
@@ -151,14 +145,13 @@ footer {
 
 .project-text a {
   color: #0077cc;
-  text-decoration: none;
 }
 
 .project-text a:hover {
   text-decoration: underline;
 }
 
-/* Layout flipping */
+/* Alternate layout flipping */
 .project-entry.right {
   flex-direction: row-reverse;
   text-align: right;
@@ -169,10 +162,32 @@ footer {
   text-align: left;
 }
 
-/* ============================================== */
-/* additional */
+/* Mosaic layout for images */
+.image-mosaic a {
+  display: block;
+}
 
-@media screen and (max-width: 768px) {
+/* ========================================= */
+/*           RESPONSIVE DESIGN               */
+/* ========================================= */
+
+@media (max-width: 768px) {
+  body {
+    flex-direction: column;
+  }
+
+  nav {
+    width: 100%;
+    height: auto;
+    position: relative;
+    padding: 15px 20px;
+  }
+
+  main {
+    padding: 20px;
+  }
+
+  /* Project section on mobile */
   .project-entry {
     flex-direction: column !important;
     align-items: center;
@@ -192,10 +207,9 @@ footer {
   .project-entry figure {
     width: 90%;
   }
-
-  .project-entry img {
-    width: 100%;
-  }
 }
+
+
+
 
 
