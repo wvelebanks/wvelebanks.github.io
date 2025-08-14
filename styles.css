@@ -213,3 +213,8 @@ footer {
 /*           MOSAIC DESIGN                   */
 /* ========================================= */
 
+.mosaic-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);  /* Default to two columns */
+    gap: 16px;  /* Space between the items */
+}
