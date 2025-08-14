@@ -218,3 +218,10 @@ footer {
     grid-template-columns: repeat(2, 1fr);  /* Default to two columns */
     gap: 16px;  /* Space between the items */
 }
+
+/* Adjust the grid to one column on mobile screens */
+@media (max-width: 767px) {
+    .mosaic-container {
+        grid-template-columns: 1fr;  /* One column on smaller screens */
+    }
+}
