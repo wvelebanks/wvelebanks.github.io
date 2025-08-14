@@ -225,3 +225,9 @@ footer {
         grid-template-columns: 1fr;  /* One column on smaller screens */
     }
 }
+
+/* Optional: Style for the mosaic items */
+.mosaic-item img {
+    width: 100%;  /* Make sure images are responsive */
+    height: auto; /* Maintain aspect ratio */
+}
