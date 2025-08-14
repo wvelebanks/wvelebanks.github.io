@@ -213,29 +213,60 @@ footer {
 /*           MOSAIC DESIGN                   */
 /* ========================================= */
 
-/* Ensure images take up equal space and are well aligned */
-.mosaic-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 10px;
+/* Global reset and styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.mosaic-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Responsive grid */
+    gap: 10px;
+    width: 90%;
+    max-width: 1200px;
+    margin: 20px auto;
+}
+
+/* Each item (image container) */
 .mosaic-item {
     overflow: hidden;
     border-radius: 8px;
     position: relative;
 }
 
-/* Ensure the images maintain their aspect ratio and fit nicely */
 .mosaic-item img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* This will ensure the images cover the available space */
-    object-position: center; /* Ensures that the image is centered */
+    object-fit: cover; /* Ensures aspect ratio is maintained */
     transition: transform 0.3s ease;
 }
 
-/* Optional: Hover effect for a small zoom */
+/* Hover effect */
 .mosaic-item img:hover {
     transform: scale(1.05);
+}
+
+/* Adjustments for larger screens */
+@media (min-width: 768px) {
+    .mosaic-container {
+        grid-template-columns: repeat(4, 1fr); /* 4 columns for medium screens */
+    }
+}
+
+@media (min-width: 1024px) {
+    .mosaic-container {
+        grid-template-columns: repeat(4, 1fr); /* 4 columns for larger screens */
+    }
 }
