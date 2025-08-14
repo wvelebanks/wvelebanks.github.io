@@ -253,17 +253,3 @@ body {
 .mosaic-item img:hover {
     transform: scale(1.05);
 }
-/*=================================*/
-/* Adjustments for larger screens */
-@media (min-width: 768px) {
-    .mosaic-container {
-        grid-template-columns: repeat(4, 1fr); /* 4 columns for medium screens */
-    }
-}
-
-@media (min-width: 1024px) {
-    .mosaic-container {
-        grid-template-columns: repeat(4, 1fr); /* 4 columns for larger screens */
-    }
-}
-
