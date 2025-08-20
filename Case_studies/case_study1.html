@@ -1,17 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Lab Experimantation Form<</title>
-
-  <!-- Bootstrap -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <!-- Custom CSS -->
-  <link rel="stylesheet" href="/styles.css" />
-
-  <!-- for the form only  -->
-  <!--<title>Lab Experimantation Form</title>  -->
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lab Experimantation Form</title>
   <style>    
    /* Basic tab styles */
    .tab-container {
@@ -56,27 +48,8 @@
   
 </head>
 <body>
-  <nav class="site-nav">
-    <figure class="profile-pic" style="text-align:center;">
-       <img src="/images/profile_pic.jpg" style="max-width: 50%; height: auto;" alt="Me" />
-     </figure>
-    <ul>
-      <li><a href="/index.html" class="{{ACTIVE_HOME}}">Home</a></li>
-      <li><a href="/#about" class="{{ACTIVE_ABOUT}}">About</a></li>
-      <li><a href="/#projects" class="{{ACTIVE_PROJECTS}}">Projects</a></li>
-      <li><a href="/#Honors" class="{{ACTIVE_HONORS}}">Honors</a></li>
-      <li><a href="/#contact" class="{{ACTIVE_CONTACT}}">Contact</a></li>
-    </ul>
-  </nav>
 
-  <main>
-    <header>
-      <h1>Lab Form</h1>
-    </header>
-
-     <!-- ========================================= -->
-
-  <div class="tab-container">
+<div class="tab-container">
   <!-- Tabs -->
   <div class="tabs">
     <div class="tab active" data-tab="form1">Wednesday Input</div>
@@ -277,23 +250,26 @@
   </div>
 </div>
 
-    
-    <!-- ========================================= -->
-   
-    <footer>
-      <p>&copy; 2025 WCVE. All rights reserved.</p>
-    </footer>
-  </main>
+<!-- JavaScript to handle tab switching -->
+<script>
+  const tabs = document.querySelectorAll('.tab');
+  const contents = document.querySelectorAll('.tab-content');
 
-  <script src="/script.js"></script>
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      // Deactivate all tabs and contents
+      tabs.forEach(t => t.classList.remove('active'));
+      contents.forEach(c => c.classList.remove('active'));
+
+      // Activate current tab and corresponding content
+      tab.classList.add('active');
+      document.getElementById(tab.getAttribute('data-tab')).classList.add('active');
+    });
+  });
+</script>
+<a href="https://wvelebanks.github.io">Back Home page.</a>
 </body>
 </html>
-
-
-
-
-
-
 
 
 
