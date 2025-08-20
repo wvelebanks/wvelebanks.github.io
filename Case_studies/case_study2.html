@@ -36,11 +36,11 @@
      <h3>1. Overview and Problem Statement</h3>
         <p> The <strong>Data Observability Toolkit (DOT)</strong>, developed by <strong>DataKind</strong>, is a robust open-source
         solution designed to help organizations monitor, track, and enhance the quality of their data pipelines. It enables reliable, 
-        high-quality data for decision-making by providing error detection and data flow tracking.DOT offers powerful functionality, 
+        high-quality data for decision-making by providing error detection and data flow tracking.<br/>DOT offers powerful functionality, 
         the setup and installation process presented challenges, particularly for users who were not familiar with its underlying components, 
         such as <strong>Docker, Apache Airflow, PostgreSQL</strong>, and <strong>the AppSmith web interface</strong>. The documentation, while comprehensive, could benefit
         from better structure and clarity. Some steps were difficult to follow, and certain sections relied on an external video tutorial, 
-        which, though helpful, was not always accessible to everyone. As a contributor, I helped streamline the installation process 
+        which, though helpful, was not always accessible to everyone.<br/> As a contributor, I helped streamline the installation process 
         and restructure the documentation to make it more intuitive and user-friendly. Focusing on improving the clarity of the guide 
         using Markdown to make the setup easier for new users and contributors, ensuring a smoother experience for those interacting
         with DOT.</p>
@@ -51,12 +51,10 @@
       <ul>
         <li><strong>Lack of Structured Documentation:</strong> The instructions were contained in a lengthy README file with no clear structure, 
           which made it difficult to follow the steps in a logical sequence. Key details were often hidden within large blocks of text,
-          causing confusion for users.</li><br/>
-        
+          causing confusion for users.</li>
         <li><strong>Dependence on Video Tutorial:</strong> The only clear guide available was an external video tutorial, which, 
            while helpful, posed <strong>accessibility issues</strong> for those who preferred written instructions or had limited internet access. 
-           The lack of a written <strong>roadmap</strong> made it harder for users to follow the process independently. </li><br/>
-        
+           The lack of a written <strong>roadmap</strong> made it harder for users to follow the process independently. </li>
         <li> <strong>Missing Visual Cues:</strong> Some sections of the documentation lacked <strong>visual aids</strong>—
           such as screenshots or diagrams—that would help users understand key steps more intuitively.
           Without these, users were more likely to miss critical actions or configurations.</li>
@@ -73,31 +71,29 @@
          <p>To begin, I <strong>recreated the environment</strong> locally using Docker to understand the software’s behavior. 
 	       The original Docker setup instructions were unclear, so I tested the steps and restructured them to include:</p>
           <ul>
-               <li><strong>Building Docker Images</strong>: I provided step-by-step commands for building Docker images 
-				   (docker build) and running containers (docker run).</li><br/>
-               <li><strong>Managing Volumes and Environment Variables</strong>: I clarified how to configure volumes and
-				   environment variables to ensure that the containerized environment mirrored production settings.</li><br/>
-         </ul>
-
-	  <p><strong>Challenge</strong>: The original guide lacked clear details about Docker's container interaction, so I added instructions on how to manage <strong>dependencies</strong> between containers.</p><br/>
+            <li><strong>Building Docker Images</strong>: I provided step-by-step commands for building Docker images 
+			    (docker build) and running containers (docker run).</li>
+            <li><strong>Managing Volumes and Environment Variables</strong>: I clarified how to configure volumes and
+				environment variables to ensure that the containerized environment mirrored production settings.</li>
+          </ul>
+	  <p><strong>Challenge</strong>: The original guide lacked clear details about Docker's container interaction, 
+		  so I added instructions on how to manage <strong>dependencies</strong> between containers.</p>
     
 	  <h5> 2. Apache Airflow Pipelines:</h5>
-        <p>I ensured that <strong>Apache Airflow</strong> could successfully execute the data pipeline.
-			The pipeline orchestration using Airflow requires defining <strong>DAGs (Directed Acyclic Graphs)</strong> to schedule tasks, but the setup was difficult to follow in the original documentation.</p>
-        <p><strong>Solution</strong>: I broke down the setup process into:</p>
-      
-	   <ul>
+	  <p>I ensured that <strong>Apache Airflow</strong> could successfully execute the data pipeline.
+		 The pipeline orchestration using Airflow requires defining <strong>DAGs (Directed Acyclic Graphs)</strong> 
+		to schedule tasks, but the setup was difficult to follow in the original documentation.</p>
+      <p><strong>Solution</strong>: I broke down the setup process into:</p>
+	    <ul>
 		   <li><strong>Configuring Airflow's Scheduler and Workers</strong>: Detailed steps on installing Apache
 			   Airflow and setting up DAGs</li>.
            <li><strong>Monitoring DAGs</strong>: I added screenshots of the Airflow web UI to show users how to view 
 			   and manage running tasks.</li>
-       </ul>
+        </ul>
 	  
        <h5> 3. PostgreSQL Database Configuration:</h5>
- 
 	   <p>The toolkit required connecting to a <strong>PostgreSQL</strong> database to store and retrieve data.
 		   The initial documentation didn't provide clear instructions on configuring the database schema and connection.</p>
-
 	  <p><strong>Solution</strong>: I added a section detailing:</p>
       
 	  <ul>
@@ -106,6 +102,22 @@
            <li><strong>Connection Setup</strong>: How to configure the DOT software to connect to PostgreSQL securely.</li>
       </ul>
 
+      <h4>b. Addressing Memory and Resource Constraints</h4>
+      <p>One of the challenges during testing was understanding the <strong>memory and system resource requirements.</strong> 
+		  the software can be resource-intensive, and I had to ensure that DOT would run smoothly on a variety of systems.</p>
+      <h5>Findings:</h5>
+      <ul>
+          <li> DOT required at least <strong>8GB of RAM</strong> to run the basic setup but was more stable
+			  with <strong>16GB</strong> for larger data sets.</li>
+          <li> <p>To optimize for <strong>low-end systems</strong>, I recommended several configuration adjustments:</p>
+              <ul>
+                  <li> Reducing <strong>parallel task execution</strong> in Airflow to minimize CPU usage.</li>
+                  <li> Setting <strong>Docker container memory limits</strong> (docker run --memory). </li>
+             </ul>
+          </li>
+      </ul>
+     <p>I documented these recommendations in the setup guide, giving users the flexibility to optimize based on their
+		 available resources.</p>
 
 
 
