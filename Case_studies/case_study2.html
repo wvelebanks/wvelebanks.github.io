@@ -86,7 +86,7 @@
       <p><strong>Solution</strong>: I broke down the setup process into:</p>
 	    <ul>
 		   <li><strong>Configuring Airflow's Scheduler and Workers</strong>: Detailed steps on installing Apache
-			   Airflow and setting up DAGs</li>.
+			   Airflow and setting up DAGs.</li>
            <li><strong>Monitoring DAGs</strong>: I added screenshots of the Airflow web UI to show users how to view 
 			   and manage running tasks.</li>
         </ul>
@@ -132,6 +132,45 @@
      <p>Additionally, I identified areas where visual aids (screenshots and diagrams) were needed. I integrated these visuals into
 		 the documentation to make complex steps more intuitive.</p>
 
+     <h5>4. The Result: Cleaner Documentation and Easier Setup</h5>
+     <p>After my intervention, the following improvements were made:</p>
+     <ul>
+         <li><strong>Structured, Easy-to-Follow Documentation</strong>: 
+			 The instructions were now separated into clear sections, each with concise explanations and relevant code snippets.
+			 <strong>Markdown</strong> provided a neat, organized layout, making it easy to follow.</li>
+         <li><strong>Visual Aids</strong>: I incorporated <strong>screenshots</strong> to clarify complex steps,
+			 such as building Docker images, configuring Airflow DAGs, and connecting to PostgreSQL.</li>
+         <li><strong>Memory Optimization</strong>: I included recommendations for configuring the application based on 
+			 available system memory, ensuring that it could run smoothly even on systems with limited resources.</li>
+     </ul>
+     <p>By addressing these issues, the setup process became <strong>more accessible</strong>, especially for users who had not worked with Docker, Airflow, or PostgreSQL before.</p>
+   
+	<h5> 4. Key Benefits of the Documentation Overhaul</h5>
+    <ul>
+        <li><strong>Improved Accessibility</strong>: The step-by-step guides and screenshots ensured that users
+			could easily follow the process without relying on external video tutorials.</li>
+        <li><strong>Optimized for Low-End Systems</strong>: The documentation now includes detailed recommendations
+			on configuring DOT for users with different hardware specifications, reducing memory-related issues.</li>
+        <li><strong>Faster Onboarding</strong>: New collaborators could now get up and running with the toolkit much
+			more quickly due to clearer instructions and visual aids.</li>
+        <li><strong>Error Reduction</strong>: By anticipating common issues (like database connection errors or Docker container
+            	misconfigurations), the likelihood of errors was minimized.</li>
+    </ul>
+
+   <h5> 6. Visualizations</h5>
+   <p>To enhance the case study and illustrate the process improvements, the following <strong>visual aids</strong> were included:</p>
+      <ul>
+          <li><strong>Screenshots of Docker Setup</strong>: A screenshot of the terminal showing the <strong>Docker build 
+			  process</strong> and <strong>container running</strong> commands.</li>
+          <li><strong>Apache Airflow Web UI</strong>: A screenshot of the <strong>Airflow dashboard</strong>,
+			  showing DAGs running and task statuses.</li>
+          <li><strong>PostgreSQL Database Configuration</strong>: A screenshot of the <strong>PostgreSQL admin interface</strong>, 
+			  illustrating schema setup and how DOT connects to the database.</li>
+          <li><strong>Markdown Reformatting</strong>: A <strong>before-and-after screenshot</strong> of the documentation, 
+			  highlighting the transition from a long, unstructured document to a more organized and readable format.</li>
+          <li><strong>Flow Diagrams</strong>: A <strong>workflow diagram</strong> showing how Docker containers, Airflow pipelines,
+			  and PostgreSQL interact in the DOT ecosystem. This diagram helps users visualize the architecture and data flow.</li>
+      </ul>
 
 
 
