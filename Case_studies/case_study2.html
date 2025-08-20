@@ -67,27 +67,45 @@
     
   <h3>3. My Role: Overhauling Documentation and Addressing Technical Constraints</h3>
        <p>As a collaborator on this project, I took several key steps to optimize the documentation and setup process:</p>
-  <h4>a. Testing the Installation Process</h4><br/>
-    	<h5>1. Docker Setup:</h5>
-          <p>To begin, I <strong>recreated the environment</strong> locally using Docker to understand the software’s behavior.
-             The original Docker setup instructions were unclear, so I tested the steps and restructured them to include:</p>
+  
+	 <h4>a. Testing the Installation Process</h4>
+	  <h5>1. Docker Setup: </h5>
+         <p>To begin, I <strong>recreated the environment</strong> locally using Docker to understand the software’s behavior. 
+	       The original Docker setup instructions were unclear, so I tested the steps and restructured them to include:</p>
           <ul>
-              <li><strong>Building Docker Images</strong>: I provided step-by-step commands for building Docker
-                images (docker build) and running containers (docker run).</li>
-            
-              <li><strong>Managing Volumes and Environment Variables</strong>: I clarified how to configure volumes and environment 
-                variables to ensure that the containerized environment mirrored production settings.</li><br/>
-          </ul>
-    <p><strong>Challenge</strong>: The original guide lacked clear details about Docker's container interaction, 
-      so I added instructions on how to manage <strong>dependencies</strong> between containers.</p><br/>
+               <li><strong>Building Docker Images</strong>: I provided step-by-step commands for building Docker images 
+				   (docker build) and running containers (docker run).</li><br/>
+               <li><strong>Managing Volumes and Environment Variables</strong>: I clarified how to configure volumes and
+				   environment variables to ensure that the containerized environment mirrored production settings.</li><br/>
+         </ul>
+
+	  <p><strong>Challenge</strong>: The original guide lacked clear details about Docker's container interaction, so I added instructions on how to manage <strong>dependencies</strong> between containers.</p><br/>
     
-    <p><strong>Challenge</strong>: The original guide lacked clear details about Docker's container interaction, 
-      so I added instructions on how to manage <strong>dependencies</strong> between containers.</p><br/>
-	  <h4> 2. Apache Airflow Pipelines:</h4>
-    <p>I ensured that <strong>Apache Airflow</strong> could successfully execute the data pipeline.
-      The pipeline orchestration using Airflow requires defining <strong>DAGs (Directed Acyclic Graphs)</strong> to schedule tasks,
-      but the setup was difficult to follow in the original documentation.</p>
-    <p><strong>Solution</strong>: I broke down the setup process into:</p>
+	  <h5> 2. Apache Airflow Pipelines:</h5>
+        <p>I ensured that <strong>Apache Airflow</strong> could successfully execute the data pipeline.
+			The pipeline orchestration using Airflow requires defining <strong>DAGs (Directed Acyclic Graphs)</strong> to schedule tasks, but the setup was difficult to follow in the original documentation.</p>
+        <p><strong>Solution</strong>: I broke down the setup process into:</p>
+      
+	   <ul>
+		   <li><strong>Configuring Airflow's Scheduler and Workers</strong>: Detailed steps on installing Apache
+			   Airflow and setting up DAGs</li>.
+           <li><strong>Monitoring DAGs</strong>: I added screenshots of the Airflow web UI to show users how to view 
+			   and manage running tasks.</li>
+       </ul>
+	  
+       <h5> 3. PostgreSQL Database Configuration:</h5>
+ 
+	   <p>The toolkit required connecting to a <strong>PostgreSQL</strong> database to store and retrieve data.
+		   The initial documentation didn't provide clear instructions on configuring the database schema and connection.</p>
+
+	  <p><strong>Solution</strong>: I added a section detailing:</p>
+      
+	  <ul>
+       	   <li><strong>Database Setup</strong>: Steps for configuring the PostgreSQL container and defining the
+			   necessary schemas and tables.</li>
+           <li><strong>Connection Setup</strong>: How to configure the DOT software to connect to PostgreSQL securely.</li>
+      </ul>
+
 
 
 
