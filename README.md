@@ -1,2 +1,2 @@
 # wvelebanks.github.io
-repo for my protfolio
+A fully custom, responsive portfolio website designed and developed from scratch using HTML and CSS, with plans to add JavaScript for interactive features. I created the wireframes and visual layout myself, focusing on clean structure, intuitive navigation, and a clear presentation of content. The site is deployed via GitHub Pages and serves as a showcase of my skills and projects.
