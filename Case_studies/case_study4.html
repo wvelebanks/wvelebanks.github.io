@@ -9,7 +9,31 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
   <!-- Custom CSS -->
   <link rel="stylesheet" href="/styles.css" />
-   <script>
+   <style>
+    .highlighted-button {
+      background-color: #ffcc00; /* Yellow highlight */
+      color: #000;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      transition: background-color 0.3s, transform 0.2s;
+    }
+
+    .highlighted-button:hover {
+      background-color: #ffdb4d; /* Lighter yellow */
+      transform: translateY(-2px);
+    }
+
+    .highlighted-button:active {
+      transform: translateY(1px);
+      box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    }
+  </style>
+  <script>
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
@@ -81,8 +105,8 @@
 	 <figure style="text-align:center;">
 		<!--<figcaption> General Overview </figcaption>-->
 	    <img src="/images/Data_to_Experience_Workflow_process1.jpg" style="max-width: 85%; height: auto;"  alt=" General_Overview_on_tech" />
-	 </figure>
-
+	 </figure>                          
+                               
 <h4>Architecture Overview: Breaking Down the Process</h4>
 <p>
 	When we talk about creating an architecture,<strong> the key is to have clear, established processes that can be
@@ -206,10 +230,11 @@
 	<figure style="text-align:center;"> 
 	   <img src="/images/Gallery_sketch.gif" style="text-align:center; alt="test gallery" />
 	   <figcaption><i> video clip taken from: "https://www.artsteps.com/view/654fb2a1c1189beaf73587f7" </i></figcaption>
-	</figure>
-     <!-- <iframe width="660" height="415" src="https://www.artsteps.com/embed/688fa04adc508b1594cdbdf0/560/315" style="text-align:center; frameborder="1" allowfullscreen></iframe> -->
+	</figure> <br />
 
-		
+	  <a href="https://compassionandchoices.artsteps.com/view/688fa04adc508b1594cdbdf0" class="highlighted-button">Check out the Gallery here!</a>
+
+	<br />
 <h3>Key Takeaways & Learnings</h3>
 <p>
 	Solid data architecture is key to building 3D art galleries that are both <strong>technically sound and visually
