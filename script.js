@@ -39,3 +39,27 @@ document.addEventListener('DOMContentLoaded', function () {
         alert('Welcome to your dynamic website! 🎉');
     });
 });
+
+// for Analytics purposes
+document.addEventListener('DOMContentLoaded', function () {
+  document.body.addEventListener('click', function (e) {
+    const link = e.target.closest('a');
+    if (!link) return;
+
+    const href = link.getAttribute('href');
+    if (!href || href.startsWith('javascript:') || href.startsWith('#')) return;
+
+    const linkUrl = new URL(href, window.location.origin);
+    const currentHost = window.location.host;
+
+    // Only track internal links
+    if (linkUrl.host === currentHost) {
+      gtag('event', 'internal_link_click', {
+        event_category: 'Navigation',
+        event_label: linkUrl.pathname,
+        page_location: window.location.href
+      });
+    }
+  });
+});
+
