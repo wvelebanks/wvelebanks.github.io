@@ -231,3 +231,41 @@ footer {
     width: 100%;  /* Make sure images are responsive */
     height: auto; /* Maintain aspect ratio */
 }
+
+/* ========================================= */
+/*               Social media icons          */
+/* ========================================= */
+
+ /* Centering the icons container */
+  .social-icons-container {
+    display: flex;
+    justify-content: center;   /* Centers the icons horizontally */
+    align-items: center;       /* Centers them vertically if the container height is more than the icons */
+    gap: 20px;                 /* Spacing between the icons */
+    margin-top: 20px;          /* Space above the icons */
+  }
+
+  /* Style for individual icons */
+  .social-icon {
+    font-size: 30px;           /* Size of the icons */
+    color: #333;               /* Default color */
+    text-decoration: none;     /* No underline */
+    transition: color 0.3s;    /* Smooth color transition on hover */
+  }
+
+  /* Hover effect */
+  .social-icon:hover {
+    color: #0077b5;            /* Default hover color for all icons */
+  }
+
+  .linkedin:hover {
+    color: #0077b5;            /* LinkedIn hover color */
+  }
+
+  .github:hover {
+    color: #333;               /* GitHub hover color */
+  }
+
+  .email:hover {
+    color: #D44638;            /* Email hover color */
+  }
